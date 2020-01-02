@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
 export default class Spotify {
   token: string;
@@ -8,10 +8,12 @@ export default class Spotify {
   }
 
   async playlist(playlistID: string) {
-    return (await fetch(`https://api.spotify.com/v1/playlists/${playlistID}`, {
-      headers: {
-        "Authorization": `Bearer ${this.token}`
-      }
-    })).json();
+    return (
+      await fetch(`https://api.spotify.com/v1/playlists/${playlistID}`, {
+        headers: {
+          Authorization: `Bearer ${this.token}`
+        }
+      })
+    ).json();
   }
 }
