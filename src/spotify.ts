@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 
 export default class Spotify {
-  token: string;
+  private token: string;
 
   constructor(token: string) {
     this.token = token;
