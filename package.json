@@ -2,9 +2,10 @@
   "name": "coldrage",
   "version": "0.0.1",
   "description": "",
-  "main": "build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-ts": "./node_modules/.bin/tsc",
+    "start": "node dist/main.js"
   },
   "author": "",
   "license": "MIT",
