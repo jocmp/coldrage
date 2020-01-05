@@ -1,11 +1,14 @@
 import ClientOAuth from "client-oauth2";
 import dotenv from "dotenv";
+import * as csv from "@fast-csv/format";
 import { DateTime } from "luxon";
-import Spotify from "./spotify";
+import * as path from "path";
+import { first } from "underscore";
+import Spotify, { Playlist } from "./spotify";
 
 dotenv.config();
 
-async function token(): Promise<string> {
+async function token() {
   const auth = new ClientOAuth({
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
@@ -19,17 +22,32 @@ async function spotify() {
   return new Spotify(await token());
 }
 
-async function playlist(playlistID: string) {
-  const s = await spotify();
-  return await s.playlist(playlistID);
+async function fetchPlaylist(playlistID: string) {
+  return await (await spotify()).fetchPlaylist(playlistID);
+}
+
+function playlistFilename(playlist: any) {
+  const timestamp = DateTime.local().toISO({ includeOffset: false });
+  const playlistName = playlist.name.replace(/ /, "_");
+  return `../output/${timestamp}_${playlist.id}_${playlistName}.csv`;
+}
+
+function formatCSV(playlist: Playlist) {
+  const rows = playlist.tracks.items.map(trackItem => ({
+    Track: trackItem.track.name,
+    Artist: first(trackItem.track.artists)?.name,
+    Album: trackItem.track.album.name,
+    Added: trackItem.added_at,
+    Popularity: trackItem.track.popularity
+  }));
+  csv.writeToPath(path.resolve(__dirname, playlistFilename(playlist)), rows, {
+    headers: true
+  });
 }
 
 async function main() {
   const playlistID = "37i9dQZF1DXbtuVQL4zoey";
-  console.log(
-    `${playlistID}-${DateTime.local().toISO({ includeOffset: false })}.csv`
-  );
-  console.log(await playlist(playlistID));
+  formatCSV(await fetchPlaylist(playlistID));
 }
 
 main();
