@@ -26,10 +26,10 @@ async function fetchPlaylist(playlistID: string) {
   return await (await spotify()).fetchPlaylist(playlistID);
 }
 
-function playlistFilename(playlist: any) {
+function playlistFilename({ name, id }: Playlist) {
   const timestamp = DateTime.local().toISO({ includeOffset: false });
-  const playlistName = playlist.name.replace(/ /, "_");
-  return `../output/${timestamp}_${playlist.id}_${playlistName}.csv`;
+  const playlistName = name.replace(/ /, "_");
+  return `../output/${timestamp}_${id}_${playlistName}.csv`;
 }
 
 function formatCSV(playlist: Playlist) {
