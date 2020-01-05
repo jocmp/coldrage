@@ -2,9 +2,7 @@
 
 cold[ sto]rage - Fetch Spotify playlist tracklists and save to CSV
 
-- TODO: Save to CSV using csv-generate
-
-### Getting started 
+### Getting started
 
 Coldrage is a Node.js app. To run:
 
@@ -14,5 +12,7 @@ Coldrage is a Node.js app. To run:
 ```
 npm install
 npm run build-ts
-npm start
+npm start <spotify-playlist-id>
 ```
+
+CSV is output to the `output/` directory, outside of version control.

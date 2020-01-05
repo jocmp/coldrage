@@ -46,7 +46,7 @@ function formatCSV(playlist: Playlist) {
 }
 
 async function main() {
-  const playlistID = "37i9dQZF1DXbtuVQL4zoey";
+  const playlistID = process.argv[2];
   formatCSV(await fetchPlaylist(playlistID));
 }
 
