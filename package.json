@@ -22,7 +22,7 @@
     "client-oauth2": "^4.2.5",
     "dotenv": "^8.2.0",
     "luxon": "^1.21.3",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "underscore": "^1.9.1"
   }
 }
