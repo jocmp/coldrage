@@ -1,0 +1,12 @@
+<% Coldrage::albums.each do |album| %>
+  <p>
+    <%= album.name %>
+  </p>
+  <ol>
+  <% album.tracks.each do |track| %>
+    <li>
+      <%= track.name %>
+    </li>
+  <% end %>
+  </ol>
+<% end %>
