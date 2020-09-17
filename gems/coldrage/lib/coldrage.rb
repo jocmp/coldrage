@@ -9,7 +9,7 @@ module Coldrage
     RSpotify.authenticate(id, secret)
   end
 
-  def self.albums
-    RSpotify::Artist.search("Emancipator").first.albums
+  def self.playlists(query:)
+    RSpotify::Playlist.search(query)
   end
 end

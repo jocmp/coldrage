@@ -1,4 +1,9 @@
-<% Coldrage::albums.each do |album| %>
+<%= form_tag(playlists_path, method: :get) do %>
+  <%= text_field_tag(:q, params[:q]) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% @albums.each do |album| %>
   <p>
     <%= album.name %>
   </p>
