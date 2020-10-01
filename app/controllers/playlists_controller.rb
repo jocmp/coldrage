@@ -3,6 +3,10 @@ class PlaylistsController < ApplicationController
     @albums = fetch_playlists
   end
 
+  def take_snapshot
+    
+  end
+
   private
 
   def fetch_playlists
@@ -12,5 +16,9 @@ class PlaylistsController < ApplicationController
 
   def query
     params[:q]
+  end
+
+  def playlist_id
+    params[:playlist_id]
   end
 end
