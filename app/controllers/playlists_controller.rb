@@ -1,24 +1,33 @@
 class PlaylistsController < ApplicationController
   def index
-    @albums = fetch_playlists
+    @playlists = fetch_playlists
   end
 
-  def take_snapshot
-    
+  def show
+    @playlist = Coldrage::SpotifyPlaylists.find(spotify_id: spotify_id)
+  end
+
+  def backup
+    record = Coldrage::SpotifyPlaylists.create(spotify_id: spotify_id)
+    SnapshotPlaylistJob.perform_later(record.spotify_id)
+
+    flash[:notice] = "Saved"
+
+    redirect_to playlist_path(record.spotify_id)
   end
 
   private
 
   def fetch_playlists
     return [] if query.blank?
-    Coldrage.playlists(query: query)
+    Coldrage::SpotifyPlaylists.search(query: query)
   end
 
   def query
     params[:q]
   end
 
-  def playlist_id
-    params[:playlist_id]
+  def spotify_id
+    params[:id]
   end
 end

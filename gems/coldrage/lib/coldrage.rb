@@ -1,7 +1,8 @@
-# require "./coldrage/playlist_snapshot"
 require "rspotify"
 
 module Coldrage
+  autoload :SpotifyPlaylists, "coldrage/spotify_playlists"
+
   class Error < StandardError
   end
 
@@ -10,10 +11,6 @@ module Coldrage
       RSpotify.authenticate(id, secret)
     end
 
-    def playlists(query:)
-      RSpotify::Playlist.search(query)
-    end
-
-    attr_accessor :playlist_snapshot
+    attr_accessor :spotify_playlists
   end
 end

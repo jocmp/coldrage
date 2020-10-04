@@ -1,0 +1,5 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %>
+<% end %>
+
+<%= button_to 'Backup', backup_playlist_path(params[:id]), method: :post %>
