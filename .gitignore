@@ -46,3 +46,4 @@ gems/*/Gemfile.lock
 /tmp/
 
 .envrc
+.rspec_status
