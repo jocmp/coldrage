@@ -23,7 +23,7 @@ module SpotifyPlaylists
       ApplicationRecord.transaction do
         record = SpotifyPlaylist.find_or_create_by!(spotify_id: playlist.id)
         backup = Backup.find_or_create_by!(remote_entity: record)
-        BackupSnapshot.create!(backup: backup, payload: playlist.to_json)
+        BackupSnapshot.create!(backup: backup, payload: playlist.as_json)
       end
       nil
     end

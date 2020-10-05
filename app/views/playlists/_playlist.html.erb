@@ -2,7 +2,7 @@
   <li>
     <p>
       <%= view.playlist_name %>
-      <%= link_to 'Edit', playlist_path(view.spotify_id) %>
+      <%= link_to 'Backup', playlist_path(view.spotify_id) %>
     </p>
     <ol>
     <% view.playlist_tracks.each do |track| %>

@@ -1,6 +1,6 @@
 <%= form_tag(playlists_path, method: :get) do %>
-  <%= text_field_tag(:q, params[:q]) %>
-  <%= submit_tag("Search") %>
+  <%= text_field_tag(:q, params[:q], class: "pa1") %>
+  <%= submit_tag("Search", class: "f6 link dim pa1 dib white bg-black") %>
 <% end %>
 
 <ul>

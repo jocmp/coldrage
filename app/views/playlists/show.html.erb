@@ -1,5 +1,3 @@
-<% if flash[:notice] %>
-  <p><%= flash[:notice] %>
-<% end %>
+<%= render 'components/alert' %>
 
-<%= button_to 'Backup', backup_playlist_path(params[:id]), method: :post %>
+<%= button_to 'Backup', backup_playlist_path(params[:spotify_id]), method: :post, class: "f6 link dim ph3 pv2 mb2 dib white bg-black" %>

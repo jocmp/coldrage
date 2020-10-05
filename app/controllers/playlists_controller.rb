@@ -28,6 +28,6 @@ class PlaylistsController < ApplicationController
   end
 
   def spotify_id
-    params[:id]
+    params[:spotify_id]
   end
 end
