@@ -1,0 +1,10 @@
+<%- Playlists::PlaylistShowTrackView.new(track).tap do |view| %>
+  <tr class="stripe-dark">
+    <td>
+      <%= link_to view.track_name, view.track_url %>
+    </td>
+    <td>
+      <%= view.track_artists %>
+    </td>
+  </tr>
+<% end %>
