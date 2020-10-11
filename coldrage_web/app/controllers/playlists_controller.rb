@@ -9,7 +9,7 @@ class PlaylistsController < ApplicationController
 
   def backup
     record = Coldrage::SpotifyPlaylists.create(spotify_id: spotify_id)
-    SnapshotPlaylistJob.perform_later(record.spotify_id)
+    SnapshotPlaylistWorker.perform_async(record.spotify_id)
 
     flash[:notice] = "Saved"
 
