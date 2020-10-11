@@ -1,5 +1,5 @@
 PATH
-  remote: gems
+  remote: ..
   specs:
     coldrage (0.0.0)
       rspotify

@@ -4,18 +4,14 @@
   </div>
   <%= render 'components/alert' %>
 
-  <% if view.show_syncing? %>
-    Syncing... Refresh the page sometime.
-  <% else %>
-    <h3>
-      <%= view.playlist_name %>
-    </h3>
-
-    <% if view.show_backup_button? %>
-      <%= button_to 'Backup', backup_playlist_path(params[:spotify_id]), method: :post, class: "f6 link dim ph3 pv2 mb2 dib white bg-black" %>
-    <% else %>
-      <%= "First synced at #{view.playlist_backup_date}" %>
-    <% end %>
+  <h3>
+    <%= view.playlist_name %>
+  </h3>
+  <% if view.show_backup_button? %>
+    <%= button_to 'Backup', backup_playlist_path(params[:spotify_id]), method: :post, class: "f6 link dim ph3 pv2 mb3 dib white bg-black" %>
+  <% end %>
+  <%= view.playlist_backup_date %>
+  <% if view.tracks.present? %>
     <table>
       <thead>
         <tr>

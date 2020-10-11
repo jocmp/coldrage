@@ -12,8 +12,8 @@ module Playlists
       playlist.name
     end
 
-    def playlist_tracks
-      playlist.tracks
+    def playlist_description
+      playlist.description
     end
 
     private

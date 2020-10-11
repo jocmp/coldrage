@@ -5,9 +5,8 @@ module Coldrage
         remote_playlists.search(query)
       end
 
-      def find(spotify_id:, remote_playlists: RSpotify::Playlist)
-        Coldrage.spotify_playlists.find(spotify_id: spotify_id) ||
-          build_record(remote_playlists.find_by_id(spotify_id))
+      def find(spotify_id:)
+        Coldrage.spotify_playlists.find(spotify_id: spotify_id)
       end
 
       def create(spotify_id:)
@@ -19,11 +18,25 @@ module Coldrage
       end
 
       def build_record(remote_playlist)
-        Coldrage.spotify_playlists::Record.new(
+        Playlist.new(
           spotify_id: remote_playlist.id,
-          payload: remote_playlist.as_json
+          snapshot: Snapshot.new(payload: remote_playlist.as_json)
         )
       end
     end
+
+    Playlist = Struct.new(
+      :id,
+      :created_at,
+      :spotify_id,
+      :snapshot,
+      keyword_init: true
+    )
+
+    Snapshot = Struct.new(
+      :created_at,
+      :payload,
+      keyword_init: true
+    )
   end
 end

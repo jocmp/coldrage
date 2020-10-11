@@ -4,16 +4,12 @@ module Playlists
       @playlist = playlist
     end
 
-    def show_syncing?
-      playlist.id && playlist.payload.nil?
-    end
-
     def playlist_name
-      playlist.payload['name']
+      snapshot.payload["name"]
     end
 
     def tracks
-      playlist.payload&.fetch("tracks_cache", [])
+      snapshot.payload&.fetch("tracks_cache", [])
     end
 
     def show_backup_button?
@@ -21,11 +17,18 @@ module Playlists
     end
 
     def playlist_backup_date
-      playlist.created_at.to_formatted_s(:iso8601)
+      if snapshot.created_at
+        "Latest sync at #{snapshot.created_at.to_formatted_s(:iso8601)}"
+      elsif playlist.id
+        "Sync queued at #{playlist.created_at.to_formatted_s(:iso8601)}"
+      else
+        "Not synced yet"
+      end
     end
 
     private
 
     attr_reader :playlist
+    delegate :snapshot, to: :playlist
   end
 end
