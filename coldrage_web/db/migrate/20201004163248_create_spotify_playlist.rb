@@ -1,3 +1,4 @@
+# typed: true
 class CreateSpotifyPlaylist < ActiveRecord::Migration[6.0]
   def change
     create_table :spotify_playlists do |t|

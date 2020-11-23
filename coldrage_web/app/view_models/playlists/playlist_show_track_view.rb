@@ -1,3 +1,4 @@
+# typed: true
 module Playlists
   class PlaylistShowTrackView
     def initialize(cached_track)

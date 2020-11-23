@@ -1,3 +1,4 @@
+# typed: true
 class SnapshotPlaylistWorker
   include Sidekiq::Worker
 

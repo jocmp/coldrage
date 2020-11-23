@@ -1,3 +1,4 @@
+# typed: true
 module Coldrage
   module SpotifyPlaylists
     class << self

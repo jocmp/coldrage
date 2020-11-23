@@ -1,3 +1,4 @@
+# typed: false
 RSpec.describe Coldrage::SpotifyPlaylists do
   describe ".search" do
     let(:remote_playlists) { class_double(RSpotify::Playlist) }

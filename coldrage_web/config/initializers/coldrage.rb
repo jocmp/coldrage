@@ -1,4 +1,4 @@
-
+# typed: false
 Rails.configuration.coldrage = {
   spotify_client_id: ENV['SPOTIFY_CLIENT_ID'],
   spotify_client_secret: ENV['SPOTIFY_CLIENT_SECRET'],

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.7.1'
 
 gem 'coldrage', path: '..'
 
@@ -24,7 +24,11 @@ gem 'sidekiq'
 group :development, :test do
   gem 'ruby_jard'
   gem 'standard'
+  gem 'sorbet'
 end
+
+gem 'sorbet-runtime'
+gem 'sorbet-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

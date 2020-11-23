@@ -1,3 +1,4 @@
+# typed: true
 class PlaylistsController < ApplicationController
   def index
     @playlists = fetch_playlists
@@ -8,6 +9,8 @@ class PlaylistsController < ApplicationController
   end
 
   def backup
+    backup = Backup.new
+
     record = Coldrage::SpotifyPlaylists.create(spotify_id: spotify_id)
     SnapshotPlaylistWorker.perform_async(record.spotify_id)
 

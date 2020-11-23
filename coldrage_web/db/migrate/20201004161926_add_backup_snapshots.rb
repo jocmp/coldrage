@@ -1,3 +1,4 @@
+# typed: false
 class AddBackupSnapshots < ActiveRecord::Migration[6.0]
   def change
     create_table :backup_snapshots do |t|

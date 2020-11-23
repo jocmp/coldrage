@@ -1,3 +1,4 @@
+# typed: true
 module Playlists
   class PlaylistShowView
     def initialize(playlist)

@@ -1,3 +1,4 @@
+# typed: false
 module SpotifyPlaylists
   class << self
     def find(spotify_id:)
