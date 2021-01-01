@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Freeze Spotify playlists for posterity
 
-Things you may want to cover:
+[Heroku app](https://kessel-coldrage.herokuapp.com/). Don't break the dyno!
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+||||
+|--|--|--|
+| | ![Demo of watchers](./watchers-demo.png) | |
+||||
