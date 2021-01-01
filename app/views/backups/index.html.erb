@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Backups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @backups.each do |backup| %>
+      <tr>
+        <td>
+          <%= "Backup at #{backup.created_at.iso8601}" %>
+          <%= link_to "View", backup %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'Backup now', watcher_backups_path(@watcher) %>

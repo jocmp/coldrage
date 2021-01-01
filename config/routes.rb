@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   root "playlists#index"
 
   resources :playlists, only: [:index, :show]
-  resources :watchers, only: [:index, :create, :new, :destroy]
+  resources :watchers, only: [:index, :create, :new, :destroy] do
+    resources :backups, only: [:index, :create]
+  end
   resources :sessions, only: [:create, :destroy]
+  resources :backups, only: [:show]
 
   get "/auth/:provider/callback", to: "sessions#create"
   post "logout", to: "sessions#destroy"
