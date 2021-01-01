@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+body {
+  padding: 2rem;
+  margin: auto;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    max-width: 70%;
+  }
+}
