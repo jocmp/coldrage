@@ -6,14 +6,14 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user=(user)
-    session[:user_id] = user.id
+    session[:current_user_id] = user.id
   end
 
   private
 
   def find_user
-    if session[:user_id]
-      User.find_by_id(session[:user_id])
+    if session[:current_user_id]
+      User.find_by_id(session[:current_user_id])
     else
       User.new
     end

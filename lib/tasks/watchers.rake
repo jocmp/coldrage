@@ -2,11 +2,9 @@ namespace :watchers do
   desc "Backup each watched playlist"
   task backup_playlist: :environment do
     Watcher.find_each do |watcher|
-      spotify_playlist = RSpotify::Playlist.find_by_id(watcher.playlist_id)
-
       Backup.create!(
-        snapshot_id: spotify_playlist.snapshot_id,
-        tracks: spotify_playlist.tracks,
+        snapshot_id: watcher.playlist.snapshot_id,
+        tracks: watcher.playlist.tracks,
         watcher: watcher
       )
     end

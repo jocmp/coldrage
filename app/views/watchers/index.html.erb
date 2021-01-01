@@ -10,11 +10,17 @@
   </thead>
 
   <tbody>
-    <% @watchers.count %>
     <% @watchers.each do |watcher| %>
       <tr>
-        <%= watcher.playlist_id %>
+        <td><%= watcher.playlist.name %></td>
+        <%# <td><%= link_to 'Show', watcher %>
+        <%# <td><%= link_to 'Edit', edit_watcher_path(watcher) %>
+        <td><%= link_to 'Destroy', watcher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<%= link_to 'New Watcher', new_watcher_path %>

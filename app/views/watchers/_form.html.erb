@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-  <!-- add hidden field for playlist_id -->
+
+  <%= form.text_field :playlist_id, placeholder: "spotify:playlist:ABC123", required: true %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

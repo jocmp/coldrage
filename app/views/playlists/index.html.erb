@@ -1,5 +1,9 @@
 <% if current_user.logged_in? %>
   <%= button_to "Log out", logout_path %>
+  <div>
+    <%= link_to "Watched playlists", watchers_path %>
+  </div>
+
   <%= render partial: "playlist", collection: current_user.as_spotify_user.playlists %>
 <% else %>
   <%= button_to "Sign in with Spotify", "/auth/spotify" %>

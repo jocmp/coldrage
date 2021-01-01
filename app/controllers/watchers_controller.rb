@@ -4,7 +4,24 @@ class WatchersController < ApplicationController
   end
 
   def create
-    Watcher.create!(watcher_params.merge(user_id: current_user.id))
+    @watcher = Watcher.new(watcher_params.merge(user_id: current_user.id))
+
+    if @watcher.save
+      flash[:notice] = "Success"
+      redirect_to watchers_path
+    else
+      render "new"
+    end
+  end
+
+  def new
+    @watcher = Watcher.new
+  end
+
+  def destroy
+    Watcher.find_by(id: params[:id]).destroy!
+
+    redirect_to watchers_path
   end
 
   private
