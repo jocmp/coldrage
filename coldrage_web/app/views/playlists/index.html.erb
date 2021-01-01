@@ -1,8 +1,0 @@
-<%= form_tag(playlists_path, method: :get) do %>
-  <%= text_field_tag(:q, params[:q], placeholder: "Spotify playlist...", class: "pa1") %>
-  <%= submit_tag("Search", class: "f6 link dim pa1 dib white bg-black") %>
-<% end %>
-
-<ul class="pl0">
-  <%= render partial: 'playlist', collection: @playlists %>
-</ul>

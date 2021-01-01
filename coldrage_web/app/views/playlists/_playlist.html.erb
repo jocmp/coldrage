@@ -1,9 +1,0 @@
-<%- Playlists::PlaylistView.new(playlist).tap do |view| %>
-  <li class="list mb2 bb">
-    <div>
-      <%= link_to view.playlist_name, playlist_path(view.spotify_id) %>
-      <p>
-        <%= view.playlist_description %>
-      </p>
-  </li>
-<% end %>
