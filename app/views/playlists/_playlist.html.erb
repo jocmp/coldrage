@@ -1,0 +1,6 @@
+<div>
+  <%= image_tag(playlist.images.first["url"], size: 80) %>
+  <%= playlist.name %>
+  <%= playlist.snapshot_id %>
+  <%= button_to "Backup", watchers_path, params: { watcher: { playlist_id: playlist.id } } %>
+</div>

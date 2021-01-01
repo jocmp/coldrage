@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Watchers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @watchers.count %>
+    <% @watchers.each do |watcher| %>
+      <tr>
+        <%= watcher.playlist_id %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

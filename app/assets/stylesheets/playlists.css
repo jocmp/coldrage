@@ -1,0 +1,8 @@
+.playlist {
+  display: flex;
+  align-items: center;
+}
+
+.playlist__title {
+  padding-left: 1rem;
+}

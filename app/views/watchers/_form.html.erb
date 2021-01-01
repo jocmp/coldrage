@@ -1,0 +1,17 @@
+<%= form_with(model: watcher) do |form| %>
+  <% if watcher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(watcher.errors.count, "error") %> prohibited this watcher from being saved:</h2>
+
+      <ul>
+        <% watcher.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!-- add hidden field for playlist_id -->
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
