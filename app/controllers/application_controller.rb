@@ -12,10 +12,6 @@ class ApplicationController < ActionController::Base
   private
 
   def find_user
-    if session[:current_user_id]
-      User.find_by_id(session[:current_user_id])
-    else
-      User.new
-    end
+    User.find_by_id(session[:current_user_id]) || User.new
   end
 end

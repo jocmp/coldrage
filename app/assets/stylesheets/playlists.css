@@ -1,8 +1,9 @@
 .playlist {
   display: flex;
   align-items: center;
+  padding-bottom: 4px;
 }
 
-.playlist__title {
-  padding-left: 1rem;
+.playlist__description {
+  padding-left: 4px;
 }

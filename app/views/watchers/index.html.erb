@@ -12,9 +12,10 @@
   <tbody>
     <% @watchers.each do |watcher| %>
       <tr>
-        <td><%= watcher.playlist.name %></td>
+        <td><%= watcher.playlist.name %> by <%= watcher.playlist.owner.display_name %></td>
         <%# <td><%= link_to 'Show', watcher %>
         <%# <td><%= link_to 'Edit', edit_watcher_path(watcher) %>
+        <td><%= link_to "Open in Spotify", watcher.playlist.external_urls["spotify"] %>
         <td><%= link_to 'Destroy', watcher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

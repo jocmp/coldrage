@@ -11,9 +11,12 @@
     </div>
   <% end %>
 
-  <%= form.text_field :playlist_id, placeholder: "spotify:playlist:ABC123", required: true %>
+  <div>
+    <p>Example format: <code>spotify:playlist:37i9dQZF1DXbtuVQL4zoey</code></p>
+    <%= form.text_field :playlist_id, placeholder: "Enter Spotify URI or Playlist ID", required: true, pattern: "[0-9A-Za-z\:]+" %>
+  </div>
 
-  <div class="actions">
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
