@@ -10,16 +10,5 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
-body {
-  padding: 2rem;
-  margin: auto;
-}
-
-@media screen and (min-width: 800px) {
-  body {
-    max-width: 70%;
-  }
-}
+ @import "bootstrap";

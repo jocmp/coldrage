@@ -1,27 +1,4 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
-  <%= "Tracks at #{@backup.created_at.iso8601}" %>
-</h1>
-
-<%= link_to 'Back', watcher_backups_path(@backup.watcher) %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Track</th>
-      <th>Artists</th>
-      <th/>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @backup.tracks.each do |track| %>
-      <tr>
-        <td><%= track["name"] %></td>
-        <td><%= track["artists"].map { |artist| artist["name"] }.join(", ") %></td>
-        <td><%= link_to "Open in Spotify", track["external_urls"]["spotify"] %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= link_to 'Edit', edit_backup_path(@backup) %> |
+<%= link_to 'Back', backups_path %>

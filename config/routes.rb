@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :playlists
+  resources :backups
   get 'watchers/create'
   get 'watchers/show'
   get 'watchers/edit'
