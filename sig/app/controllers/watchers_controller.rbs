@@ -1,0 +1,13 @@
+class WatchersController < ApplicationController
+  def index: () -> untyped
+
+  def create: () -> untyped
+
+  def new: () -> untyped
+
+  def destroy: () -> untyped
+
+  private
+
+  def watcher_params: () -> untyped
+end

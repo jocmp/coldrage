@@ -4,7 +4,10 @@ class WatchersController < ApplicationController
   end
 
   def create
-    @watcher = Watcher.new(watcher_params.merge(user_id: current_user.id))
+    @watcher = Watcher.new(
+      user_id: current_user.id,
+      playlist_id: CleanPlaylistId.clean(watcher_params[:playlist_id])
+    )
 
     if @watcher.save
       flash[:notice] = "Success"
@@ -26,7 +29,7 @@ class WatchersController < ApplicationController
 
   private
 
-    def watcher_params
-      params.require(:watcher).permit(:playlist_id)
-    end
+  def watcher_params
+    params.require(:watcher).permit(:playlist_id)
+  end
 end

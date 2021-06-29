@@ -1,0 +1,9 @@
+class ApplicationController < ActionController::Base
+  def current_user: () -> untyped
+
+  def current_user=: (untyped user) -> untyped
+
+  private
+
+  def find_user: () -> untyped
+end

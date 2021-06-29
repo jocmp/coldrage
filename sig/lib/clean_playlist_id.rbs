@@ -1,0 +1,4 @@
+class CleanPlaylistId
+  # @type method clean: (String) -> String?
+  def self.clean: (String) -> Integer
+end

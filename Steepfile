@@ -1,7 +1,7 @@
 target :lib do
   signature "sig"
 
-  check "app/models/**.rb"
+  check "app"
 
   repo_path "vendor/rbs/gem_rbs_collection/gems"
 
@@ -21,7 +21,7 @@ target :lib do
   library "activerecord"
   library "railties"
 
-  # ignore "lib/templates/*.rb"
+  ignore "app/models/watcher.rb"
 
   # library "pathname", "set"       # Standard libraries
   # library "strong_json"           # Gems

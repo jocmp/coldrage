@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  # @dynamic current_user
   helper_method :current_user
 
   def current_user
@@ -6,12 +7,14 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user=(user)
-    session[:current_user_id] = user.id
+    if user # remove to see null checking
+      session[:current_user_id] = user.id
+    end
   end
 
   private
 
   def find_user
-    User.find_by_id(session[:current_user_id]) || User.new
+    User.find_by(id: session[:current_user_id]) || User.new
   end
 end
