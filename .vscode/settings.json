@@ -1,0 +1,6 @@
+{
+  "ruby.intellisense": "rubyLocate",
+  "ruby.lint": {
+    "standard": true
+  }
+}

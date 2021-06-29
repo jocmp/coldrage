@@ -1,0 +1,113 @@
+class User < ApplicationRecord
+  extend _ActiveRecord_Relation_ClassMethods[User, ActiveRecord_Relation, Integer]
+
+  attr_accessor id(): Integer
+  def id_changed?: () -> bool
+  def id_change: () -> [ Integer?, Integer? ]
+  def id_will_change!: () -> void
+  def id_was: () -> Integer?
+  def id_previously_changed?: () -> bool
+  def id_previous_change: () -> Array[Integer?]?
+  def id_previously_was: () -> Integer?
+  def id_before_last_save: () -> Integer?
+  def id_change_to_be_saved: () -> Array[Integer?]?
+  def id_in_database: () -> Integer?
+  def saved_change_to_id: () -> Array[Integer?]?
+  def saved_change_to_id?: () -> bool
+  def will_save_change_to_id?: () -> bool
+  def restore_id!: () -> void
+  def clear_id_change: () -> void
+
+  attr_accessor created_at(): ActiveSupport::TimeWithZone
+  def created_at_changed?: () -> bool
+  def created_at_change: () -> [ ActiveSupport::TimeWithZone?, ActiveSupport::TimeWithZone? ]
+  def created_at_will_change!: () -> void
+  def created_at_was: () -> ActiveSupport::TimeWithZone?
+  def created_at_previously_changed?: () -> bool
+  def created_at_previous_change: () -> Array[ActiveSupport::TimeWithZone?]?
+  def created_at_previously_was: () -> ActiveSupport::TimeWithZone?
+  def created_at_before_last_save: () -> ActiveSupport::TimeWithZone?
+  def created_at_change_to_be_saved: () -> Array[ActiveSupport::TimeWithZone?]?
+  def created_at_in_database: () -> ActiveSupport::TimeWithZone?
+  def saved_change_to_created_at: () -> Array[ActiveSupport::TimeWithZone?]?
+  def saved_change_to_created_at?: () -> bool
+  def will_save_change_to_created_at?: () -> bool
+  def restore_created_at!: () -> void
+  def clear_created_at_change: () -> void
+
+  attr_accessor updated_at(): ActiveSupport::TimeWithZone
+  def updated_at_changed?: () -> bool
+  def updated_at_change: () -> [ ActiveSupport::TimeWithZone?, ActiveSupport::TimeWithZone? ]
+  def updated_at_will_change!: () -> void
+  def updated_at_was: () -> ActiveSupport::TimeWithZone?
+  def updated_at_previously_changed?: () -> bool
+  def updated_at_previous_change: () -> Array[ActiveSupport::TimeWithZone?]?
+  def updated_at_previously_was: () -> ActiveSupport::TimeWithZone?
+  def updated_at_before_last_save: () -> ActiveSupport::TimeWithZone?
+  def updated_at_change_to_be_saved: () -> Array[ActiveSupport::TimeWithZone?]?
+  def updated_at_in_database: () -> ActiveSupport::TimeWithZone?
+  def saved_change_to_updated_at: () -> Array[ActiveSupport::TimeWithZone?]?
+  def saved_change_to_updated_at?: () -> bool
+  def will_save_change_to_updated_at?: () -> bool
+  def restore_updated_at!: () -> void
+  def clear_updated_at_change: () -> void
+
+  attr_accessor provider(): String?
+  def provider_changed?: () -> bool
+  def provider_change: () -> [ String?, String? ]
+  def provider_will_change!: () -> void
+  def provider_was: () -> String?
+  def provider_previously_changed?: () -> bool
+  def provider_previous_change: () -> Array[String?]?
+  def provider_previously_was: () -> String?
+  def provider_before_last_save: () -> String?
+  def provider_change_to_be_saved: () -> Array[String?]?
+  def provider_in_database: () -> String?
+  def saved_change_to_provider: () -> Array[String?]?
+  def saved_change_to_provider?: () -> bool
+  def will_save_change_to_provider?: () -> bool
+  def restore_provider!: () -> void
+  def clear_provider_change: () -> void
+
+  attr_accessor uid(): String?
+  def uid_changed?: () -> bool
+  def uid_change: () -> [ String?, String? ]
+  def uid_will_change!: () -> void
+  def uid_was: () -> String?
+  def uid_previously_changed?: () -> bool
+  def uid_previous_change: () -> Array[String?]?
+  def uid_previously_was: () -> String?
+  def uid_before_last_save: () -> String?
+  def uid_change_to_be_saved: () -> Array[String?]?
+  def uid_in_database: () -> String?
+  def saved_change_to_uid: () -> Array[String?]?
+  def saved_change_to_uid?: () -> bool
+  def will_save_change_to_uid?: () -> bool
+  def restore_uid!: () -> void
+  def clear_uid_change: () -> void
+
+  attr_accessor auth(): untyped?
+  def auth_changed?: () -> bool
+  def auth_change: () -> [ untyped?, untyped? ]
+  def auth_will_change!: () -> void
+  def auth_was: () -> untyped?
+  def auth_previously_changed?: () -> bool
+  def auth_previous_change: () -> Array[untyped?]?
+  def auth_previously_was: () -> untyped?
+  def auth_before_last_save: () -> untyped?
+  def auth_change_to_be_saved: () -> Array[untyped?]?
+  def auth_in_database: () -> untyped?
+  def saved_change_to_auth: () -> Array[untyped?]?
+  def saved_change_to_auth?: () -> bool
+  def will_save_change_to_auth?: () -> bool
+  def restore_auth!: () -> void
+  def clear_auth_change: () -> void
+
+  class ActiveRecord_Relation < ActiveRecord::Relation
+    include _ActiveRecord_Relation[User, Integer]
+    include Enumerable[User]
+  end
+
+  class ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
+  end
+end

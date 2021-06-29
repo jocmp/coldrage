@@ -25,7 +25,7 @@ class BackupsController < ApplicationController
 
   private
 
-    def find_watcher
-      @watcher = Watcher.find(params["watcher_id"])
-    end
+  def find_watcher
+    @watcher = Watcher.find(params["watcher_id"])
+  end
 end
